@@ -1,0 +1,47 @@
+function getUser() {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            resolve({
+                id: 1,
+                name: "Tanishk"
+            });
+
+        }, 500);
+
+    });
+}
+
+function getOrders(userId) {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            resolve([
+                { id: 101, product: "Laptop" },
+                { id: 102, product: "Mouse" }
+            ]);
+
+        }, 500);
+
+    });
+}
+
+function getPayments(orders) {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            resolve({
+                orderCount: orders.length,
+                status: "Paid"
+            });
+
+        }, 500);
+
+    });
+}
