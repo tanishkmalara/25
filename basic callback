@@ -1,0 +1,21 @@
+function getUser(callback) {
+    setTimeout(() => {
+        const user = {
+            id: 1,
+            name: "Tanishk"
+        };
+
+        callback(null, user);
+    }, 1000);
+}
+
+getUser((error, user) => {
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+
+    console.log("User:", user);
+
+});
