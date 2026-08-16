@@ -1,0 +1,25 @@
+getUser((error, user) => {
+
+    if (error) return console.log(error);
+
+    getOrders(user.id, (error, orders) => {
+
+        if (error) return console.log(error);
+
+        getProducts(orders, (error, products) => {
+
+            if (error) return console.log(error);
+
+            getPayments(products, (error, payments) => {
+
+                if (error) return console.log(error);
+
+                console.log("Payments:", payments);
+
+            });
+
+        });
+
+    });
+
+});
