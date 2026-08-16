@@ -1,0 +1,23 @@
+async function main() {
+
+    try {
+
+        const user = await getUser();
+
+        const orders = await getOrders(user.id);
+
+        const payment = await getPayments(orders);
+
+        console.log("User:", user);
+        console.log("Orders:", orders);
+        console.log("Payment:", payment);
+
+    } catch (error) {
+
+        console.log("Error:", error);
+
+    }
+
+}
+
+main();
