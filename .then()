@@ -1,0 +1,13 @@
+getUser()
+    .then(user => {
+        return getOrders(user.id);
+    })
+    .then(orders => {
+        return getPayments(orders);
+    })
+    .then(payment => {
+        console.log(payment);
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
